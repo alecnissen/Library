@@ -14,7 +14,7 @@
     <br>
     <div class="add-book-container"> 
         
-        <button id="add-book-btn">Add Book</button>
+        <button id="add-book-btn" class="add-book-btn">Add Book</button>
     </div>
 
     <div class="pop-up-field"> 
@@ -32,9 +32,15 @@
         </div>
     </div>
     
-    <script src="main.js"> 
+    <script> 
 
-    // document.getElementById('add-book-btn').add
+    document.getElementById("add-book-btn").addEventListener('click', function(){
+        document.querySelector(".pop-up-field").style.display = "flex"; 
+    }) 
+
+    document.querySelector('.close-btn').addEventListener('click', function(){
+        document.querySelector('.pop-up-field').style.display = "none"; 
+    })
     
     </script>
 </body>

@@ -4,9 +4,7 @@ let myLibrary = [];
 
 let addBookBtn = document.getElementById('add-book-btn'); 
 
-// addBookBtn.addEventListener('click', (e) => { 
-//     confirm('hey');
-// })
+
 
 
 function Book(title, author, pages, read) { 
@@ -17,7 +15,7 @@ function Book(title, author, pages, read) {
 } 
 
 function addBookToLibrary() { 
-    const book1 = new Book('alec', 'nissen', 10, 'not-read'); 
+    // const book1 = new Book('alec', 'nissen', 10, 'not-read'); 
     myLibrary.push(book1); 
     
 } 

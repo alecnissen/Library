@@ -1,18 +1,23 @@
 let myLibrary = []; 
 
+
+
 // constructor function 
-
-let addBookBtn = document.getElementById('add-book-btn'); 
-
-
-
-
 function Book(title, author, pages, read) { 
     this.title = title; 
     this.author = author; 
     this.pages = pages; 
     this.read = read; 
 } 
+
+// event listener when add book btn is pressed 
+document.getElementById("add-book-btn").addEventListener('click', function(){
+    document.querySelector(".pop-up-field").style.display = "flex"; 
+}) 
+// event listener when close btn is pressed 
+document.querySelector('.close-btn').addEventListener('click', function(){
+    document.querySelector('.pop-up-field').style.display = "none"; 
+})
 
 function addBookToLibrary() { 
     // const book1 = new Book('alec', 'nissen', 10, 'not-read'); 

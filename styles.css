@@ -1,0 +1,60 @@
+* { 
+    display: border-box;
+    margin: 0; 
+    padding: 0; 
+    background-color: skyblue;
+} 
+
+.header-container { 
+    display: flex; 
+    justify-content: center;
+    text-decoration: underline;
+    font-family: sans-serif;
+} 
+
+.add-book-container { 
+    display: flex; 
+    justify-content: center;
+    
+} 
+
+.add-book-container > button { 
+    background-color: black;
+    color: white; 
+    height: 3em; 
+    width: 8em; 
+    font-size: 1em;
+} 
+
+.pop-up-field { 
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} 
+
+.pop-up-content { 
+    height: 290px; 
+    width: 500px; 
+    background: white; 
+    padding: 20px; 
+    border-radius: 5px; 
+    position: relative; 
+} 
+
+.pop-up-content > input { 
+    margin: 20px auto; 
+    display: block;
+    width: 50%; 
+    padding: 8px; 
+    border: 1px solid gray; 
+}
+
+/* #add-book-btn { 
+
+} */

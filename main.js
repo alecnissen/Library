@@ -21,9 +21,13 @@ document.querySelector('.close-btn').addEventListener('click', function(){
 
 //DOM to access the values that the user entered 
 
+let title 
+
+
 let submitBtn = document.querySelector('submit-btn').addEventListener('click', function(){
-    let title = document.querySelector('title-of-book-input-field').value; 
-})
+     title = document.querySelector('title-of-book-input-field').value; 
+    //  title = document.getElementById('title-of-book-input-field').value;  
+}) 
 
 
 function addBookToLibrary() { 

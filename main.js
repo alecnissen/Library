@@ -17,10 +17,17 @@ document.getElementById("add-book-btn").addEventListener('click', function(){
 // event listener when close btn is pressed 
 document.querySelector('.close-btn').addEventListener('click', function(){
     document.querySelector('.pop-up-field').style.display = "none"; 
+}) 
+
+//DOM to access the values that the user entered 
+
+let submitBtn = document.querySelector('submit-btn').addEventListener('click', function(){
+    let title = document.querySelector('title-of-book-input-field').value; 
 })
 
+
 function addBookToLibrary() { 
-    // const book1 = new Book('alec', 'nissen', 10, 'not-read'); 
+    // const book1 = new Book(''); 
     myLibrary.push(book1); 
     
 } 

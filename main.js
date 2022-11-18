@@ -22,12 +22,18 @@ document.querySelector('.close-btn').addEventListener('click', function(){
 //DOM to access the values that the user entered 
 
 let title 
+let author 
 
 
-let submitBtn = document.querySelector('submit-btn').addEventListener('click', function(){
-     title = document.querySelector('title-of-book-input-field').value; 
+let submitBtn = document.querySelector('#submit-btn').addEventListener('click', function(){
+     title = document.querySelector('#title-of-book-input-field').value; 
+     author = document.querySelector('#author-of-book-input-field').value
     //  title = document.getElementById('title-of-book-input-field').value;  
-}) 
+})  
+
+
+
+
 
 
 function addBookToLibrary() { 

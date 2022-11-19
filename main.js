@@ -23,14 +23,24 @@ document.querySelector('.close-btn').addEventListener('click', function(){
 
 let title 
 let author 
+let pages  
 
+let submitBtn = document.querySelector('#submit-btn'); 
+let inputForm = document.querySelector('form'); 
 
-let submitBtn = document.querySelector('#submit-btn').addEventListener('click', function(){
+// submitBtn.addEventListener('submit', function(e){ 
+//         // e.preventDefault()
+//          title = document.querySelector('#title-of-book-input-field').value; 
+//          author = document.querySelector('#author-of-book-input-field').value;
+//          pages =  document.querySelector('#pages-input-field').value; 
+//     })  
+
+inputForm.addEventListener('submit', function(e){ 
+     e.preventDefault();
      title = document.querySelector('#title-of-book-input-field').value; 
-     author = document.querySelector('#author-of-book-input-field').value
-    //  title = document.getElementById('title-of-book-input-field').value;  
+     author = document.querySelector('#author-of-book-input-field').value;
+     pages =  document.querySelector('#pages-input-field').value; 
 })  
-
 
 
 

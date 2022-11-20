@@ -24,6 +24,7 @@ document.querySelector('.close-btn').addEventListener('click', function(){
 let title 
 let author 
 let pages  
+let readOrNot 
 
 let submitBtn = document.querySelector('#submit-btn'); 
 let inputForm = document.querySelector('form'); 
@@ -40,9 +41,15 @@ inputForm.addEventListener('submit', function(e){
      title = document.querySelector('#title-of-book-input-field').value; 
      author = document.querySelector('#author-of-book-input-field').value;
      pages =  document.querySelector('#pages-input-field').value; 
+     readOrNot = document.querySelector('#read-or-not-checkbox').value;
+     this.reset();
 })  
 
-
+// function check(obj) { 
+//     if (obj.checked) { 
+//         this.value = true; 
+//     }
+// }
 
 
 

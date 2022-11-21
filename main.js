@@ -8,7 +8,8 @@ function Book(title, author, pages, read) {
     this.author = author; 
     this.pages = pages; 
     this.read = read; 
-} 
+}  
+
 
 // event listener when add book btn is pressed 
 document.getElementById("add-book-btn").addEventListener('click', function(){
@@ -21,60 +22,47 @@ document.querySelector('.close-btn').addEventListener('click', function(){
 
 //DOM to access the values that the user entered 
 
-let title 
-let author 
-let pages  
-let readOrNot 
+// let title 
+// let author 
+// let pages  
+// let readOrNot 
 
 let submitBtn = document.querySelector('#submit-btn'); 
 let inputForm = document.querySelector('form'); 
 
-// submitBtn.addEventListener('submit', function(e){ 
-//         // e.preventDefault()
-//          title = document.querySelector('#title-of-book-input-field').value; 
-//          author = document.querySelector('#author-of-book-input-field').value;
-//          pages =  document.querySelector('#pages-input-field').value; 
-//     })  
+
 
 inputForm.addEventListener('submit', function(e){ 
-     e.preventDefault();
-     title = document.querySelector('#title-of-book-input-field').value; 
-     author = document.querySelector('#author-of-book-input-field').value;
-     pages =  document.querySelector('#pages-input-field').value; 
-     readOrNot = document.querySelector('#read-or-not-checkbox').checked; 
-     this.reset(); 
-    })  
-    
-    
-    function addBookToLibrary() { 
-        // const book1 = new Book(''); 
-        myLibrary.push(book1); 
+    e.preventDefault();
+    let title = document.querySelector('#title-of-book-input-field').value; 
+    let author = document.querySelector('#author-of-book-input-field').value;
+    let pages =  document.querySelector('#pages-input-field').value; 
+    let readOrNot = document.querySelector('#read-or-not-checkbox').checked; 
+    this.reset(); 
+    const newBook = new Book(title, author, pages, readOrNot); 
+    addBookToLibrary(newBook); 
+})  
+
+
+function addBookToLibrary(newBook) { 
+    // const book1 = new Book(''); 
+        myLibrary.push(newBook); 
         
     } 
-// to check if checkbox is on or off 
-// document.getElementById('readOrNot').addEventListener('change', function(){
-//   if (readOrNot.checked) { 
-//       document.querySelector('readOrNot').value = true; 
-//   } else { 
-//      document.querySelector('readOrNot').value = false; 
-//   }
-//  })
+    
+    
+    
+   
 
-// let checkbox = document.getElementById('read-or-not-checkbox').addEventListener('change', function(){
-//  if (checkbox.checked) { 
-//     readOrNot = document.querySelector('#read-or-not-checkbox').value = true; 
-//  } else { 
-//     readOrNot = document.querySelector('#read-or-not-checkbox').value = false; 
-//  }
-// }) 
 
-// function check(obj) { 
-//     if (obj.checked) { 
-//         this.value = true; 
-//     }
-// }
 
-// document.getElementById("checkbox").addEventListener("change", function() {
+
+
+
+
+
+
+    // document.getElementById("checkbox").addEventListener("change", function() {
 //     if (this.checked) {
 //         //Whatever u want to do if checked
 //     }

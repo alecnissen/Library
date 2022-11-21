@@ -41,9 +41,32 @@ inputForm.addEventListener('submit', function(e){
      title = document.querySelector('#title-of-book-input-field').value; 
      author = document.querySelector('#author-of-book-input-field').value;
      pages =  document.querySelector('#pages-input-field').value; 
-     readOrNot = document.querySelector('#read-or-not-checkbox').value;
-     this.reset();
-})  
+     readOrNot = document.querySelector('#read-or-not-checkbox').checked; 
+     this.reset(); 
+    })  
+    
+    
+    function addBookToLibrary() { 
+        // const book1 = new Book(''); 
+        myLibrary.push(book1); 
+        
+    } 
+// to check if checkbox is on or off 
+// document.getElementById('readOrNot').addEventListener('change', function(){
+//   if (readOrNot.checked) { 
+//       document.querySelector('readOrNot').value = true; 
+//   } else { 
+//      document.querySelector('readOrNot').value = false; 
+//   }
+//  })
+
+// let checkbox = document.getElementById('read-or-not-checkbox').addEventListener('change', function(){
+//  if (checkbox.checked) { 
+//     readOrNot = document.querySelector('#read-or-not-checkbox').value = true; 
+//  } else { 
+//     readOrNot = document.querySelector('#read-or-not-checkbox').value = false; 
+//  }
+// }) 
 
 // function check(obj) { 
 //     if (obj.checked) { 
@@ -51,13 +74,14 @@ inputForm.addEventListener('submit', function(e){
 //     }
 // }
 
-
-
-function addBookToLibrary() { 
-    // const book1 = new Book(''); 
-    myLibrary.push(book1); 
-    
-} 
+// document.getElementById("checkbox").addEventListener("change", function() {
+//     if (this.checked) {
+//         //Whatever u want to do if checked
+//     }
+//     else {
+//         //Whatever u want to do if not checked
+//     }
+// })
 
 // All of your book objects are going to be stored in a simple array, 
 // so add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array. 

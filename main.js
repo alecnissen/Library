@@ -69,7 +69,11 @@ function addBookToLibrary(newBook) {
 
 function displayBooks() { 
 
-    let container = document.querySelector('#container-for-books'); 
+    let booksContainer = document.querySelector('#container-for-books'); 
+
+    let styleContainer = document.createElement('container'); 
+
+    styleContainer.classList.add('book-style-container'); 
     
     let bookOutputTitle = document.createElement('div'); 
 
@@ -77,10 +81,14 @@ function displayBooks() {
 
     let bookOutputPages = document.createElement('div'); 
 
-    let bookOutputReadOrNot = document.createElement('div'); 
+    let bookOutputReadBook = document.createElement('button'); 
 
+    bookOutputReadBook.classList.add('read-book-btn');  
 
+    let removeBookButton = document.createElement('button'); 
 
+    removeBookButton.classList.add('remove-book-btn'); 
+    
     // getting the value of title, author, pages, read 
      
     bookOutputTitle.innerText =  'Title: ' + myLibrary[0].title; 
@@ -89,17 +97,38 @@ function displayBooks() {
     
     bookOutputPages.innerText = 'Pages: ' + myLibrary[0].pages; 
 
-    bookOutputReadOrNot.innerText = 'Read?: ' + myLibrary[0].read; 
+    bookOutputReadBook.innerText = 'Read '; 
+
+    removeBookButton.innerText = 'Remove';  
+
+    // appending the values to the styling container 
+
+    // styleContainer.append(bookOutputTitle); 
+    // styleContainer.append(bookOutputAuthor); 
+    // styleContainer.append(bookOutputPages); 
+    // styleContainer.append(bookOutputReadBook); 
+    // styleContainer.append(removeBookButton); 
 
 
 
-    container.append(bookOutputTitle); 
+
     
-    container.append(bookOutputAuthor); 
+    
+    styleContainer.append(bookOutputTitle); 
+    
+    styleContainer.append(bookOutputAuthor); 
+    
+    styleContainer.append(bookOutputPages); 
+    
+    styleContainer.append(bookOutputReadBook); 
+    
+    styleContainer.append(removeBookButton); 
+    
+    // appending the style container to the main container 
+    
+    booksContainer.append(styleContainer); 
 
-    container.append(bookOutputPages); 
-
-    container.append(bookOutputReadOrNot); 
+    // document.body.append(booksContainer);
 
 }                               
 

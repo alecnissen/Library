@@ -69,6 +69,28 @@
 
 .read-it-container { 
     display: flex; 
-    justify-content: center;
+    justify-content: center; 
     gap: 1em; 
-}
+} 
+
+#container-for-books { 
+    display: flex;
+    flex-direction: row;
+    /* background-color: skyblue; */
+} 
+
+.read-book-btn, 
+.remove-book-btn { 
+    background-color: white;
+    width:  5em; 
+    height: 2em;       
+} 
+
+.book-style-container { 
+    background-color: skyblue; 
+    color: red; 
+    border: 1px solid black; 
+    height: 15%; 
+    width: 15%; 
+}   
+ 

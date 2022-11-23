@@ -2,6 +2,8 @@ let myLibrary = [];
 
 
 
+
+
 // constructor function 
 function Book(title, author, pages, read) { 
     this.title = title; 
@@ -41,17 +43,47 @@ inputForm.addEventListener('submit', function(e){
     this.reset(); 
     const newBook = new Book(title, author, pages, readOrNot); 
     addBookToLibrary(newBook); 
-})  
+    
+})   
 
 
 function addBookToLibrary(newBook) { 
-    // const book1 = new Book(''); 
-        myLibrary.push(newBook); 
-        
-    } 
+    myLibrary.push(newBook);
+    displayBooks();   
+} 
+
+// create value elements, displaying the book inside the DOM 
+
+// let container = document.querySelector('#container-for-books'); 
     
+// let bookOutputField = document.createElement('div'); 
+ 
+
+// bookOutputField.innerText = myLibrary[0].title; 
+
+
+// container.append(bookOutputField);  
+
+// 
+
+
+function displayBooks() { 
+
+    let container = document.querySelector('#container-for-books'); 
     
-    
+    let bookOutputField = document.createElement('div'); 
+     
+    bookOutputField.innerText = myLibrary[0].title; 
+
+    // bookOutputField.innerText = myLibrary[0].author; 
+
+    container.append(bookOutputField);  
+
+}                               
+
+
+
+
    
 
 
@@ -62,14 +94,7 @@ function addBookToLibrary(newBook) {
 
 
 
-    // document.getElementById("checkbox").addEventListener("change", function() {
-//     if (this.checked) {
-//         //Whatever u want to do if checked
-//     }
-//     else {
-//         //Whatever u want to do if not checked
-//     }
-// })
+
 
 // All of your book objects are going to be stored in a simple array, 
 // so add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array. 

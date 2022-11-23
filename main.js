@@ -71,13 +71,35 @@ function displayBooks() {
 
     let container = document.querySelector('#container-for-books'); 
     
-    let bookOutputField = document.createElement('div'); 
+    let bookOutputTitle = document.createElement('div'); 
+
+    let bookOutputAuthor = document.createElement('div'); 
+
+    let bookOutputPages = document.createElement('div'); 
+
+    let bookOutputReadOrNot = document.createElement('div'); 
+
+
+
+    // getting the value of title, author, pages, read 
      
-    bookOutputField.innerText = myLibrary[0].title; 
+    bookOutputTitle.innerText =  myLibrary[0].title; 
 
-    // bookOutputField.innerText = myLibrary[0].author; 
+    bookOutputAuthor.innerText = myLibrary[0].author;
+    
+    bookOutputPages.innerText = myLibrary[0].pages; 
 
-    container.append(bookOutputField);  
+    bookOutputReadOrNot.innerText = myLibrary[0].read; 
+
+
+
+    container.append(bookOutputTitle); 
+    
+    container.append(bookOutputAuthor); 
+
+    container.append(bookOutputPages); 
+
+    container.append(bookOutputReadOrNot); 
 
 }                               
 

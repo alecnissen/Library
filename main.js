@@ -83,13 +83,13 @@ function displayBooks() {
 
     // getting the value of title, author, pages, read 
      
-    bookOutputTitle.innerText =  myLibrary[0].title; 
+    bookOutputTitle.innerText =  'Title: ' + myLibrary[0].title; 
 
-    bookOutputAuthor.innerText = myLibrary[0].author;
+    bookOutputAuthor.innerText = 'Author: ' + myLibrary[0].author;
     
-    bookOutputPages.innerText = myLibrary[0].pages; 
+    bookOutputPages.innerText = 'Pages: ' + myLibrary[0].pages; 
 
-    bookOutputReadOrNot.innerText = myLibrary[0].read; 
+    bookOutputReadOrNot.innerText = 'Read?: ' + myLibrary[0].read; 
 
 
 

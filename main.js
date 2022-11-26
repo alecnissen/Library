@@ -113,7 +113,7 @@ function displayBooks() {
     
     bookOutputPages.innerText = 'Pages: ' + myLibrary[myLibrary.length -1].pages; 
 
-    bookOutputReadBook.innerText = 'Read ';
+    bookOutputReadBook.innerText = 'Read ' + myLibrary[myLibrary.length -1].read;
 
     removeBookButton.innerText = 'Remove';  
 

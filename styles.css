@@ -76,6 +76,10 @@
 #container-for-books { 
     display: flex;
     flex-direction: row;
+    margin-top: 1em; 
+    gap: 1em; 
+    height: 100em; 
+    width: 100em; 
     /* background-color: skyblue; */
 } 
 
@@ -83,14 +87,36 @@
 .remove-book-btn { 
     background-color: white;
     width:  5em; 
-    height: 2em;       
-} 
+    height: 2em;  
+    /* display: inline;
+    justify-content: center; */
+    /* align-content: flex-end;    */
+      
+    /* position: relative;
+    top: 10em; 
+    left: 1.5em; 
+    margin: 1em;  */
+
+}  
+
 
 .book-style-container { 
     background-color: skyblue; 
-    color: red; 
     border: 1px solid black; 
     height: 15%; 
     width: 15%; 
+    /* display: flex;
+    flex-direction: column; */
+   
+    /* font-size: 1.5rem; */
+   
 }   
+
+/* .button-container-for-book { 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    color: pink; 
+    background-color: yellow;
+} */
  

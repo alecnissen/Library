@@ -69,6 +69,11 @@ function addBookToLibrary(newBook) {
 
 function displayBooks() { 
 
+    // for (let i = 0; i < myLibrary.length; i++) { 
+        // let book = myLibrary[i]; 
+        
+   //  }
+
     let booksContainer = document.querySelector('#container-for-books'); 
 
     let styleContainer = document.createElement('container'); 
@@ -83,21 +88,32 @@ function displayBooks() {
 
     let bookOutputReadBook = document.createElement('button'); 
 
+    let buttonContainer = document.createElement('container'); 
+
+    buttonContainer.classList.add('button-container-for-book')
+
     bookOutputReadBook.classList.add('read-book-btn');  
 
     let removeBookButton = document.createElement('button'); 
 
     removeBookButton.classList.add('remove-book-btn'); 
+ 
+    // accessing read book and remove book properties 
+    // buttonContainer.append(bookOutputReadBook, removeBookButton);  
+
+    // bookOutputReadBook.addEventListener('click', function(){
+        
+    // }) 
     
     // getting the value of title, author, pages, read 
      
-    bookOutputTitle.innerText =  'Title: ' + myLibrary[0].title; 
+    bookOutputTitle.innerText =  'Title: ' + myLibrary[myLibrary.length -1].title; 
 
-    bookOutputAuthor.innerText = 'Author: ' + myLibrary[0].author;
+    bookOutputAuthor.innerText = 'Author: ' + myLibrary[myLibrary.length -1].author;
     
-    bookOutputPages.innerText = 'Pages: ' + myLibrary[0].pages; 
+    bookOutputPages.innerText = 'Pages: ' + myLibrary[myLibrary.length -1].pages; 
 
-    bookOutputReadBook.innerText = 'Read '; 
+    bookOutputReadBook.innerText = 'Read ';
 
     removeBookButton.innerText = 'Remove';  
 
@@ -123,12 +139,14 @@ function displayBooks() {
     styleContainer.append(bookOutputReadBook); 
     
     styleContainer.append(removeBookButton); 
+
     
     // appending the style container to the main container 
     
     booksContainer.append(styleContainer); 
 
-    // document.body.append(booksContainer);
+
+
 
 }                               
 

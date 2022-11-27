@@ -22,12 +22,6 @@ document.querySelector('.close-btn').addEventListener('click', function(){
     document.querySelector('.pop-up-field').style.display = "none"; 
 }) 
 
-//DOM to access the values that the user entered 
-
-// let title 
-// let author 
-// let pages  
-// let readOrNot 
 
 let submitBtn = document.querySelector('#submit-btn'); 
 let inputForm = document.querySelector('form'); 
@@ -69,10 +63,6 @@ function addBookToLibrary(newBook) {
 
 function displayBooks() { 
 
-    // for (let i = 0; i < myLibrary.length; i++) { 
-        // let book = myLibrary[i]; 
-        
-   //  }
 
     let booksContainer = document.querySelector('#container-for-books'); 
 
@@ -86,6 +76,7 @@ function displayBooks() {
 
     let bookOutputPages = document.createElement('div'); 
 
+    // read book btn   
     let bookOutputReadBook = document.createElement('button'); 
 
     let buttonContainer = document.createElement('container'); 
@@ -113,7 +104,20 @@ function displayBooks() {
     
     bookOutputPages.innerText = 'Pages: ' + myLibrary[myLibrary.length -1].pages; 
 
-    bookOutputReadBook.innerText = 'Read ' + myLibrary[myLibrary.length -1].read;
+    // let div = document.createElement('div'); 
+    if (myLibrary[myLibrary.length -1].read === true) { 
+        bookOutputReadBook.innerText = 'Read' 
+        bookOutputReadBook.style.backgroundColor = 'green';
+        booksContainer.append(bookOutputReadBook);  
+    } else if (myLibrary[myLibrary.length -1].read === false) { 
+        bookOutputReadBook.innerText = 'Not Read'; 
+        bookOutputReadBook.style.backgroundColor = 'red'; 
+        booksContainer.append(bookOutputReadBook); 
+    }   
+
+    booksContainer.append(bookOutputReadBook);
+
+    // bookOutputReadBook.innerText =  myLibrary[myLibrary.length -1].read;
 
     removeBookButton.innerText = 'Remove';  
 
@@ -146,12 +150,18 @@ function displayBooks() {
     booksContainer.append(styleContainer); 
 
 
-
-
 }                               
 
 
 
+
+
+
+
+
+// removeBookButton.addEventListener('click', function(){
+//     removeBookButton.display = none; 
+// })
 
    
 

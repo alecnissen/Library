@@ -10,6 +10,7 @@ function Book(title, author, pages, read) {
     this.author = author; 
     this.pages = pages; 
     this.read = read; 
+    this.id = crypto.randomUUID(); 
 }  
 
 
@@ -33,8 +34,10 @@ inputForm.addEventListener('submit', function(e){
     let title = document.querySelector('#title-of-book-input-field').value; 
     let author = document.querySelector('#author-of-book-input-field').value;
     let pages =  document.querySelector('#pages-input-field').value; 
-    let readOrNot = document.querySelector('#read-or-not-checkbox').checked; 
+    let readOrNot = document.querySelector('#read-or-not-checkbox').checked;  
     this.reset(); 
+    // adding unique ID to each element 
+    // this.id.dataset = id; 
     const newBook = new Book(title, author, pages, readOrNot); 
     addBookToLibrary(newBook); 
     
@@ -113,9 +116,9 @@ function displayBooks() {
         bookOutputReadBook.innerText = 'Not Read'; 
         bookOutputReadBook.style.backgroundColor = 'red'; 
         booksContainer.append(bookOutputReadBook); 
-    }   
+    }    
 
-    booksContainer.append(bookOutputReadBook);
+    booksContainer.append(bookOutputReadBook);   
 
     // bookOutputReadBook.innerText =  myLibrary[myLibrary.length -1].read;
 
@@ -146,10 +149,11 @@ function displayBooks() {
 
     
     // appending the style container to the main container 
+    // bookOutputReadBook.value = myLibrary[myLibrary.length -1].id; 
     
     booksContainer.append(styleContainer); 
 
-
+    
 }                               
 
 
@@ -159,8 +163,31 @@ function displayBooks() {
 
 
 
+
+
+// bookOutputReadBook.addEventListener('click', function(){
+//  for (let i = 0; i < myLibrary.length; i++) { 
+//     let selectedBook = myLibrary[i]; 
+
+//     selectedBook.splice(i, 1); 
+
+   
+//  }
+// })   
+
+
+
+
+
+
+
+
+
 // removeBookButton.addEventListener('click', function(){
-//     removeBookButton.display = none; 
+//      for (let i = 0; i < myLibrary.length; i++) { 
+//     let selectedBook = myLibrary[i]; 
+
+//     selectedBook.splice(i, 1); 
 // })
 
    

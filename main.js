@@ -46,7 +46,7 @@ inputForm.addEventListener('submit', function(e){
 
 function addBookToLibrary(newBook) { 
     myLibrary.push(newBook);
-    displayBooks();   
+    displayBook(newBook);   
 } 
 
 // create value elements, displaying the book inside the DOM 
@@ -63,8 +63,9 @@ function addBookToLibrary(newBook) {
 
 // 
 
+// display book function, takes in Book obj, function to display one book 
 
-function displayBooks() { 
+ function displayBook(newBook) {  
 
 
     let booksContainer = document.querySelector('#container-for-books'); 
@@ -101,18 +102,17 @@ function displayBooks() {
     
     // getting the value of title, author, pages, read 
      
-    bookOutputTitle.innerText =  'Title: ' + myLibrary[myLibrary.length -1].title; 
+    bookOutputTitle.innerText =  `Title:  ${newBook.title}`; 
 
-    bookOutputAuthor.innerText = 'Author: ' + myLibrary[myLibrary.length -1].author;
+    bookOutputAuthor.innerText = `Author:  ${newBook.author}`;
     
-    bookOutputPages.innerText = 'Pages: ' + myLibrary[myLibrary.length -1].pages; 
+    bookOutputPages.innerText = `Pages: ${newBook.pages}`; 
 
-    // let div = document.createElement('div'); 
-    if (myLibrary[myLibrary.length -1].read === true) { 
+    if (newBook.read === true) { 
         bookOutputReadBook.innerText = 'Read' 
         bookOutputReadBook.style.backgroundColor = 'green';
         booksContainer.append(bookOutputReadBook);  
-    } else if (myLibrary[myLibrary.length -1].read === false) { 
+    } else if (newBook.read === false) { 
         bookOutputReadBook.innerText = 'Not Read'; 
         bookOutputReadBook.style.backgroundColor = 'red'; 
         booksContainer.append(bookOutputReadBook); 
@@ -124,19 +124,7 @@ function displayBooks() {
 
     removeBookButton.innerText = 'Remove';  
 
-    // appending the values to the styling container 
 
-    // styleContainer.append(bookOutputTitle); 
-    // styleContainer.append(bookOutputAuthor); 
-    // styleContainer.append(bookOutputPages); 
-    // styleContainer.append(bookOutputReadBook); 
-    // styleContainer.append(removeBookButton); 
-
-
-
-
-    
-    
     styleContainer.append(bookOutputTitle); 
     
     styleContainer.append(bookOutputAuthor); 
@@ -148,16 +136,19 @@ function displayBooks() {
     styleContainer.append(removeBookButton); 
 
     
-    // appending the style container to the main container 
-    // bookOutputReadBook.value = myLibrary[myLibrary.length -1].id; 
+    // appending the style container to the main container  
     
     booksContainer.append(styleContainer); 
-
-    
-}                               
-
+   
+}                                
 
 
+function displayBooks(books){
+    // loop 
+    books.forEach(displayBook);
+} 
+
+displayBooks(myLibrary);
 
 
 
@@ -165,32 +156,32 @@ function displayBooks() {
 
 
 
-// bookOutputReadBook.addEventListener('click', function(){
-//  for (let i = 0; i < myLibrary.length; i++) { 
-//     let selectedBook = myLibrary[i]; 
 
-//     selectedBook.splice(i, 1); 
+
+
+
+
+
+// function displayBooks () { 
+    // loop through myLibrary array 
+    // take in book variable, 
+    // print variable to the DOM. 
+
+// } 
+
+
+
+// function displayBooks(func1) { 
+//     for (let i = 0; i < myLibrary.length; i++) { 
+//         let selectedBook = myLibrary[i]; 
+
+//     } 
+// }
+
+
+
 
    
-//  }
-// })   
-
-
-
-
-
-
-
-
-
-// removeBookButton.addEventListener('click', function(){
-//      for (let i = 0; i < myLibrary.length; i++) { 
-//     let selectedBook = myLibrary[i]; 
-
-//     selectedBook.splice(i, 1); 
-// })
-
-   
 
 
 
@@ -202,10 +193,5 @@ function displayBooks() {
 
 
 
-// All of your book objects are going to be stored in a simple array, 
-// so add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array. 
-// Your code should look something like this:
-
-// use DOM manipulation to get userinput, pass value to addBook func which that function will put into (push) myLibrary array
 
 

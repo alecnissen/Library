@@ -11,7 +11,28 @@ function Book(title, author, pages, read) {
     this.pages = pages; 
     this.read = read; 
     this.id = crypto.randomUUID(); 
-}  
+}    
+
+
+
+     
+
+// Book.prototype.toggleReadStatus = function() { 
+//     this.read = !this.read; 
+//     // conditional, if this is read, apply read styles 
+//     // if this is NOT READ, apply read styles 
+
+// } 
+
+//  let readBookBtn = document.getElementsByClassName('read-book-btn');
+ 
+//  readBookBtn.addEventListener('click', function(){
+
+//  })
+
+// function toggleReadStatus() { 
+// }     
+
 
 
 // event listener when add book btn is pressed 
@@ -65,7 +86,7 @@ function addBookToLibrary(newBook) {
 
 // display book function, takes in Book obj, function to display one book 
 
- function displayBook(newBook) {  
+ function displayBook(newBook) {   
 
 
     let booksContainer = document.querySelector('#container-for-books'); 
@@ -93,14 +114,9 @@ function addBookToLibrary(newBook) {
 
     removeBookButton.classList.add('remove-book-btn'); 
  
-    // accessing read book and remove book properties 
-    // buttonContainer.append(bookOutputReadBook, removeBookButton);  
 
-    // bookOutputReadBook.addEventListener('click', function(){
-        
-    // }) 
+
     
-    // getting the value of title, author, pages, read 
      
     bookOutputTitle.innerText =  `Title:  ${newBook.title}`; 
 
@@ -108,7 +124,7 @@ function addBookToLibrary(newBook) {
     
     bookOutputPages.innerText = `Pages: ${newBook.pages}`; 
 
-    if (newBook.read === true) { 
+    if (newBook.read === true) {   
         bookOutputReadBook.innerText = 'Read' 
         bookOutputReadBook.style.backgroundColor = 'green';
         booksContainer.append(bookOutputReadBook);  
@@ -118,7 +134,7 @@ function addBookToLibrary(newBook) {
         booksContainer.append(bookOutputReadBook); 
     }    
 
-    booksContainer.append(bookOutputReadBook);   
+    booksContainer.append(bookOutputReadBook);    
 
     // bookOutputReadBook.innerText =  myLibrary[myLibrary.length -1].read;
 
@@ -138,8 +154,9 @@ function addBookToLibrary(newBook) {
     
     // appending the style container to the main container  
     
-    booksContainer.append(styleContainer); 
-   
+    booksContainer.append(styleContainer);    
+
+    
 }                                
 
 
@@ -148,35 +165,171 @@ function displayBooks(books){
     books.forEach(displayBook);
 } 
 
-displayBooks(myLibrary);
+displayBooks(myLibrary); 
 
 
 
 
 
+Book.prototype.toggleReadStatus = function() { 
+    Book.read = !Book.read;  
+    
+    
+    
+    if (Book.read === true) { 
+        let printReadStatus = document.createElement('div'); 
+        let readBtnContainer = document.createElement('container'); 
+        printReadStatus.innerText = 'read'; 
+        printReadStatus.style.backgroundColor = 'green'; 
+        readBtnContainer.append(printReadStatus); 
+    } else if (Book.read === false) { 
+        printReadStatus.innerText = 'not-read'; 
+        printReadStatus.style.backgroundColor = 'red'; 
+        readBtnContainer.append(printReadStatus); 
+    } 
+    // reverse the value with button click  
+    // what are we trying to grab? Books read value? 
+} 
+
+ let readBookBtn = document.getElementsByClassName('read-book-btn');
+ 
+ readBookBtn.addEventListener('click', function(){
+    toggleReadStatus();  
+ })        
 
 
 
+//  if (newBook.read === true) {   
+//     bookOutputReadBook.innerText = 'Read' 
+//     bookOutputReadBook.style.backgroundColor = 'green';
+//     booksContainer.append(bookOutputReadBook);  
+// } else if (newBook.read === false) { 
+//     bookOutputReadBook.innerText = 'Not Read'; 
+//     bookOutputReadBook.style.backgroundColor = 'red'; 
+//     booksContainer.append(bookOutputReadBook); 
+// }   
 
 
 
-
-
-// function displayBooks () { 
-    // loop through myLibrary array 
-    // take in book variable, 
-    // print variable to the DOM. 
-
+// function toggleReadStatus(book) { 
+//     this.read = !this.read; 
 // } 
 
 
 
-// function displayBooks(func1) { 
-//     for (let i = 0; i < myLibrary.length; i++) { 
-//         let selectedBook = myLibrary[i]; 
 
-//     } 
-// }
+        // let readBookBtn = document.getElementsByClassName('read-book-btn'); 
+        
+        // readBookBtn.addEventListener('click', function(){
+        //     toggleStatus(); 
+        // }) 
+        
+        
+        
+        // function toggleStatus (Book) { 
+        //     this.read = !this.read; 
+        //     // styleContainer.append(Book); 
+        //     // booksContainer.append(styleContainer); 
+        // } 
+
+
+        
+
+
+
+
+
+// function toggleBook(books) { 
+    // myLibrary.foreach(books) => { 
+        //     books.read = !books.read; 
+        // }
+        // } 
+        
+        
+        // Book.prototype.changeReadStatus = function () { 
+        //     this.read = !this.read; 
+             
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Book.prototype.changeReadStatus = function () { 
+//     this.read = !this.read; 
+     
+// }  
+
+// have no idea how to toggle the books read status 
+
+// Book.prototype.addEventListener('click', function(){
+//     this.read = !this.read; 
+// })  
+
+ 
+
+
+
+
+// how to toggle the buttons, read status 
+
+// to toggle read status, 
+
+// prototype is a shared object between other objects
+
+// the prototype can have different methods attached to it, 
+
+// you can also set different methods on the prototype, which can be shared amoungst objects 
+
+// I need to set a method on the prototype, like a function which flips the value, 
+
+// then call the method on the element, 
+
+
+
+
+
+// grab the read button 
+// when the button is clicked 
+// set a prototype method on the obj, using obj.create, method will be a function call 
+// which toggles read status, and flips the value to read to not read 
+
+// call the method 
+// update to the DOM 
+
+
+
+
+// toggle the books read status 
+
+// grab the read book button, grab the element with the DOM 
+
+// let readBookCheckboxValue = document.getElementById('read-or-not-checkbox'); 
+
+// readBookCheckboxValue.addEventListener('click', function(books){
+//     // grab the book 
+    
+//     books.forEach(book => () { 
+//         book.addEventListener('click', function(){
+//             (!book.read); 
+//         })
+//     })
+// })
+
+
+
+
+
+
+
 
 
 

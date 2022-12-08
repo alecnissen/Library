@@ -73,9 +73,9 @@ function addBookToLibrary(newBook) {
 // create value elements, displaying the book inside the DOM 
 
 // let container = document.querySelector('#container-for-books'); 
-    
-// let bookOutputField = document.createElement('div'); 
- 
+
+// let bdookOutputField = document.createElement('div'); 
+
 
 // bookOutputField.innerText = myLibrary[0].title; 
 
@@ -86,13 +86,18 @@ function addBookToLibrary(newBook) {
 
 // display book function, takes in Book obj, function to display one book 
 
- function displayBook(newBook) {   
 
 
+
+
+function displayBook(newBook) {   
+    
+    
+    
     let booksContainer = document.querySelector('#container-for-books'); 
     
     let styleContainer = document.createElement('container'); 
-
+    
     styleContainer.classList.add('book-style-container'); 
     
     let bookOutputTitle = document.createElement('div'); 
@@ -105,30 +110,82 @@ function addBookToLibrary(newBook) {
     let bookOutputReadBook = document.createElement('button'); 
      
     let buttonContainer = document.createElement('container'); 
-
+    
     buttonContainer.classList.add('button-container-for-book')
-
+    
     bookOutputReadBook.classList.add('read-book-btn');  
-     
+    // remove book btn 
     let removeBookButton = document.createElement('button'); 
-
+    
     removeBookButton.classList.add('remove-book-btn'); 
- 
+    
     bookOutputTitle.innerText =  `Title:  ${newBook.title}`; 
-
+    
     bookOutputAuthor.innerText = `Author:  ${newBook.author}`;
     
     bookOutputPages.innerText = `Pages: ${newBook.pages}`; 
+    
+    // Book.prototype.removeBookBtn = function() { 
+        //     newBook.remove(); 
+        // } 
+        
+        
+        
+        
+        bookOutputReadBook.addEventListener('click', () => { 
+            newBook.toggleReadStatus(); 
+            renderToggleStatus(); 
+        }) 
+        
+        Book.prototype.toggleReadStatus = function() { 
+            this.read = !this.read;  
+            
+        }   
+    
+        
+        
+        function renderToggleStatus() { 
+        
+        if (newBook.read === true) { 
+            bookOutputReadBook.innerText = 'Read' 
+            bookOutputReadBook.style.backgroundColor = 'green';
+            // bookOutputReadBook.append(styleContainer);
+            // booksContainer.append(bookOutputReadBook); 
+        } else if (newBook.read === false) { 
+            bookOutputReadBook.innerText = 'Not Read'; 
+            bookOutputReadBook.style.backgroundColor = 'red'; 
+            // bookOutputReadBook.append(styleContainer);
+            // booksContainer.append(bookOutputReadBook); 
+        }   
+        
+    }  
+    
+    // renderToggleStatus(newBook);
+    // toggleReadStatus(newBook);  
+
+    // removeBookButton.addEventListener('click', function(){
+    //     newBook.removeBookBtn(); 
+
+    // })
+    
+     
+    
+    
+
 
     if (newBook.read === true) {   
         bookOutputReadBook.innerText = 'Read' 
         bookOutputReadBook.style.backgroundColor = 'green';
-        booksContainer.append(bookOutputReadBook);  
+        // booksContainer.append(bookOutputReadBook);  
     } else if (newBook.read === false) { 
         bookOutputReadBook.innerText = 'Not Read'; 
         bookOutputReadBook.style.backgroundColor = 'red'; 
-        booksContainer.append(bookOutputReadBook); 
-    }    
+        // booksContainer.append(bookOutputReadBook); 
+    }   
+        
+
+    
+
 
     booksContainer.append(bookOutputReadBook);    
 
@@ -153,37 +210,14 @@ function addBookToLibrary(newBook) {
     booksContainer.append(styleContainer);   
     
     
+    
+} 
 
 
-    Book.prototype.toggleReadStatus = function() { 
-        newBook.read = !newBook.read;  
-        
-    }   
-    
-    
-    function renderToggleStatus(Book) { 
-         
-        if (newBook.read === true) { 
-        bookOutputReadBook.innerText = 'Read' 
-        bookOutputReadBook.style.backgroundColor = 'green';
-        bookOutputReadBook.append(styleContainer);
-        booksContainer.append(bookOutputReadBook); 
-    } else if (newBook.read === false) { 
-        bookOutputReadBook.innerText = 'Not Read'; 
-        bookOutputReadBook.style.backgroundColor = 'red'; 
-        bookOutputReadBook.append(styleContainer);
-        booksContainer.append(bookOutputReadBook); 
-    }   
-        
-    }   
-    
-    
-    bookOutputReadBook.addEventListener('click', () => { 
-            newBook.toggleReadStatus(); 
-            renderToggleStatus(); 
-        })
-}                                
 
+
+
+// displayBook(newBook); 
 
 function displayBooks(books){
     // loop 
@@ -191,6 +225,10 @@ function displayBooks(books){
 } 
 
 displayBooks(myLibrary); 
+
+
+  
+
 
 // toggle read btn 
 

@@ -13,6 +13,8 @@
     font-family: sans-serif;
 } 
 
+
+
 .add-book-container { 
     display: flex; 
     justify-content: center;
@@ -81,6 +83,8 @@
     gap: 1em; 
     height: 100em; 
     width: 100em; 
+    font-size: 2.3rem;
+    font-weight: bold;
     /* background-color: skyblue; */
 } 
 
@@ -89,6 +93,9 @@
     background-color: white;
     width:  5em; 
     height: 2em;  
+    font-size: 2rem;
+    margin-left: 2.2em; 
+    margin-top: 8em;
     /* display: inline;
     justify-content: center; */
     /* align-content: flex-end;    */
@@ -114,10 +121,15 @@
 }   
 
 /* .button-container-for-book { 
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    color: pink; 
-    background-color: yellow;
+   display: flex;
 } */
  
+
+
+/* .read-book-btn, 
+.remove-book-btn { 
+    display: flex;
+    flex-direction: row; 
+    font-size: 1.5rem; 
+    
+} */

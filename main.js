@@ -14,31 +14,18 @@ function Book(title, author, pages, read) {
 }    
 
 
-let bookID; 
+// let bookID; 
 let book; 
 let selectedBookFromArray 
 let deletedBook
 let removeBookFromDOM
+let deleteThis
+let removeThis 
+let bookfromArrayID 
 // let newBook; 
 
 
-     
-
-// Book.prototype.toggleReadStatus = function() { 
-//     this.read = !this.read; 
-//     // conditional, if this is read, apply read styles 
-//     // if this is NOT READ, apply read styles 
-
-// } 
-
-//  let readBookBtn = document.getElementsByClassName('read-book-btn');
- 
-//  readBookBtn.addEventListener('click', function(){
-
-//  })
-
-// function toggleReadStatus() { 
-// }     
+       
 
 
 
@@ -69,7 +56,7 @@ inputForm.addEventListener('submit', function(e){
     const newBook = new Book(title, author, pages, readOrNot); 
     addBookToLibrary(newBook); 
     
-})   
+})      
 
 
 function addBookToLibrary(newBook) { 
@@ -102,6 +89,8 @@ function displayBook(newBook) {
     
     
     let booksContainer = document.querySelector('#container-for-books'); 
+
+    // let bookContainer = document.
     
     let styleContainer = document.createElement('container'); 
     
@@ -136,9 +125,7 @@ function displayBook(newBook) {
     
     bookOutputPages.innerText = `Pages: ${newBook.pages}`; 
     
-    // Book.prototype.removeBookBtn = function() { 
-        //     newBook.remove(); 
-        // } 
+    
         
         
         
@@ -169,91 +156,43 @@ function displayBook(newBook) {
             // booksContainer.append(bookOutputReadBook); 
         }   
         
-    }  
-    
-    // remove btn, needs event listener, 
-    // getting the book ID from book obj 
-    // passing variable to removeBook, which takes in book 
-    // loop through the array of book obj, can still use normal loop 
-    // I need to take in a variable, so I can compare if book in the array matches newBook's ID
-    // if match, start at that index, take out the book  
-    
-    // removeBookButton.addEventListener('click', function(e) {
-    //         // e.target
-    //         let bookID = newBook.id; 
-           
+    }   
 
-    //         removeBook(bookID); 
+ 
              
-
-        
-        
-        //     function removeBook(bookID) { 
-        //         for(let i = 0; i < myLibrary.length; i++) { 
-        //             let book = myLibrary[i];
-        //             let booksUniqueID = book.id;    
-        //             if (bookID === booksUniqueID) { 
-        //              book.splice(i, 1); 
-        //             }  
-        //         }   
-                
-        //     }
-        // }
-
-
-        // removeBookButton.addEventListener('click', function(e){
-            // let clickedId = e.target.value; 
-        //     myLibrary.forEach(book) { 
-        //         book.dataset.id = myLibrary[i]; 
-
-            // if (book.id === 
-               
-        //         // set the data attrib here 
-                
-                
-        //     });  
-// }    
-
-                // const deleteBook = (id) => bookArr.filter((book) => !book.id 
-                    // get a book, 
-                    // 
-
-
-                    // hey guys, I am on the final step of the library project, I am very confused on how to get the remove button working, 
-                    // I know I need an event listener, loop through the array get a book 
-                    // set the data attribute of the book, to the book id, 
-                    // if that id matches the one selected, remove it using splice. 
 
 
     
                 removeBookButton.addEventListener('click', function(e){
-                     bookID = newBook.id; 
-                    //  bookID = e.target.value;  
-                    for (let i = 0; i < myLibrary.length; i++) { 
-                         book = myLibrary[i]; 
-                         selectedBookFromArray = book.id; 
-                         deletedBook = myLibrary.splice(selectedBookFromArray, 1); 
-                        //  e.target.remove(newBook); 
-                        // deletedBook.target.remove(); 
-                        //  removeBookFromDOM = document.querySelector('deletedBook'); 
-                        //  .removeChild(); 
-                        //  deletedBook = selectedBookFromArray.remove(); 
-                        // removeBook(book); 
-                        // myLibrary.filter
+                  
+                    // if statement, if the id match, set that books textContent, or innerHTML to '', 
+                    // so the books properties will not render 
+                     
+                    const bookID = newBook.id; 
+                        myLibrary = myLibrary.filter(function(selectedBook) { 
+                            if (selectedBook.id === bookID) { 
+                                // bookOutputTitle.innerText = ''; 
+                                // bookOutputAuthor.innerText = ''; 
+                                // bookOutputPages.innerText = '';
+                                // bookOutputReadBook.innerText = ''; 
+                                // removeBookButton.innerText = ''; 
+                                styleContainer.remove(); 
+                                // booksContainer.append(styleContainer); 
+                                // booksContainer.innerText = ''; 
+                                
+                            }
+                            return selectedBook.id !== bookID;      
 
-                        
-
-                    }
-                })   
-
-                // function removeBook(book) { 
-                //     myLibrary.filter(book => (book.id === selectedBookFromArray))
-
+                        });      
+                    })   
                     
-                // }
-    
-
-
+                    //  function removeBookDOM() { 
+                            // removeBookDOM();
+                            // booksContainer.remove(); call a function to remove from DOM 
+                        //     return bookOutputAuthor.remove();  
+                        //  }   
+     
+                                                                                  
     if (newBook.read === true) {   
         bookOutputReadBook.innerText = 'Read' 
         bookOutputReadBook.style.backgroundColor = 'green';
@@ -262,7 +201,7 @@ function displayBook(newBook) {
         bookOutputReadBook.innerText = 'Not Read'; 
         bookOutputReadBook.style.backgroundColor = 'red'; 
         // booksContainer.append(bookOutputReadBook); 
-    }   
+    }    
         
 
     
@@ -291,8 +230,11 @@ function displayBook(newBook) {
     booksContainer.append(styleContainer);   
     
     
-    
-} 
+}   
+
+
+
+
 
 
 
@@ -300,15 +242,50 @@ function displayBook(newBook) {
 
 // displayBook(newBook); 
 
-function displayBooks(books){
+function displayBooks(books){  
+    // books container, removes child, displays again 
     // loop 
-    books.forEach(displayBook); 
+    books.forEach(displayBook);   
 } 
 
 displayBooks(myLibrary); 
 
 
   
+
+
+
+
+// Hi @Cake#6320  I am very close to being done, can I have some help please?  I can remove the book from the array, and access the book deleted, 
+
+// I am confused on how to remove the whole book from the DOM, 
+
+// I have tried using remove() methods, selecting the element with querySelector, setting it's textContent to 'none', it seems like remove() can work but I'm just not sure why it is not working here? 
+
+// ``` 
+// removeBookButton.addEventListener('click', function(e){
+//                      bookID = newBook.id; 
+//                     //  bookID = e.target.value;  
+//                     for (let i = 0; i < myLibrary.length; i++) { 
+//                          book = myLibrary[i]; 
+//                          selectedBookFromArray = book.id; 
+//                          deletedBook = myLibrary.splice(selectedBookFromArray, 1);
+//                          deleted
+//                    }
+//                 })  ``` 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // toggle read btn 

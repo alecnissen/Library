@@ -181,7 +181,7 @@ function displayBook(newBook) {
                                 // booksContainer.innerText = ''; 
                                 
                             }
-                            return selectedBook.id !== bookID;      
+                            return selectedBook.id !== bookID;          
 
                         });      
                     })   

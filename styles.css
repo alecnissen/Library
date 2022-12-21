@@ -2,24 +2,45 @@
     display: border-box;
     margin: 0; 
     padding: 0; 
+    /* background-color: wheat; */
     /* background-color: skyblue; */
 } 
+
+body { 
+    background-color: darkblue;
+}
 
 
 .header-container { 
     display: flex; 
     justify-content: center;
-    text-decoration: underline;
-    font-family: sans-serif;
+    /* text-decoration: underline; */
+    /* font-family: sans-serif; */
 } 
+
+.header-container > h1 { 
+    font-size: 5rem; 
+    font-family:'Courier New', Courier, monospace;
+    color: white; 
+    text-decoration: underline;
+}
 
 
 
 .add-book-container { 
     display: flex; 
     justify-content: center;
+    font-size: 1.5rem;
     
 } 
+/* 
+.sticky-btn-container { 
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+} */
+
+
 
 .add-book-container > button { 
     background-color: black;
@@ -28,6 +49,14 @@
     width: 8em; 
     font-size: 1em;
 } 
+
+.add-book-btn:hover { 
+    background-color: black;
+    color: white; 
+    height: 3em; 
+    width: 8em; 
+    font-size: 1.2em;
+}
 
 .pop-up-field { 
     background: rgba(0, 0, 0, 0.6);
@@ -50,12 +79,21 @@
     position: relative; 
 } 
 
+.have-you-read-it-txt { 
+    font-size: 1.3rem; 
+} 
+
+#read-or-not-checkbox { 
+    width: 30px; 
+}
+
 .pop-up-content > input { 
     margin: 20px auto; 
     display: block;
     width: 50%; 
     padding: 8px; 
     border: 1px solid gray; 
+    
 }
 
 .close-btn { 
@@ -70,6 +108,16 @@
     cursor: pointer;
 } 
 
+#submit-btn { 
+    margin-top: 0.9em; 
+    background-color: black; 
+    color: white; 
+    width: 6em;
+    height: 2.7em;  
+}
+
+
+
 .read-it-container { 
     display: flex; 
     justify-content: center; 
@@ -77,48 +125,129 @@
 } 
 
 #container-for-books { 
-    display: flex;
+     display: flex; 
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 1em; 
-    gap: 1em; 
-    height: 100em; 
-    width: 100em; 
-    font-size: 2.3rem;
-    font-weight: bold;
-    /* background-color: skyblue; */
+    gap: 1em;  
+    align-content: flex-start;
+    width: 100em;
+     height: 100em;  
+    /* width: 15em; 
+    height: 15em;  */
+    font-size: 1.5rem;
+    font-weight: bold; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    /* overflow: scroll; */
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* background-color: lavender; */
+    /* color: skyblue;
+    background-color: peru; */
+    /* border: 3px solid black; 
+    border-radius: 5%; */
+    /* display: flex;
+    flex-wrap: wrap;  */
+    
 } 
 
 .read-book-btn, 
 .remove-book-btn { 
-    background-color: white;
+    /* background-color: white; */
     width:  5em; 
     height: 2em;  
-    font-size: 2rem;
-    margin-left: 2.2em; 
-    margin-top: 8em;
+    font-size: 1.5rem;
+    /* margin-left: 3.5em; 
+    margin-top: 10em;  */
+    margin-left: 1.5em; 
+    margin-top: 5em; 
+    border-radius: 15%; 
+    
+
+
     /* display: inline;
     justify-content: center; */
     /* align-content: flex-end;    */
+    /* display: flex;  */
       
-    /* position: relative;
-    top: 10em; 
-    left: 1.5em; 
-    margin: 1em;  */
+     /* position: relative; */
+    /* top: 10em; 
+    left: 1.5em;   */
+    /* margin: 1em;  */ 
+
 
 }  
 
+.remove-book-btn { 
+    background-color: red; 
+ }
 
-.book-style-container { 
-    background-color: skyblue; 
-    border: 1px solid black; 
+.remove-book-btn:hover { 
+    color: white; 
+    width: 5.5em; 
+    height: 2.5em; 
+}
+
+/* #container-for-books > .read-book-btn { 
+    position: relative;
+    top: 12em; 
+    left: 3em;  
+}  */
+
+
+
+/* 
+#container-for-books > .remove-book-btn { 
+    position: relative;
+    top: 12em; 
+    left: 3em;  
+}  */
+
+/* .book-style-container > .read-book-btn, .remove-book-btn { 
+    position: relative;
+    top: 12em; 
+
+}  */ 
+
+/* .read-book-btn { 
+    position: relative;
+    top: 12em; 
+} */
+
+
+
+ .book-style-container { 
+     background-color: skyblue; 
+    border: 1px solid black;  
     height: 15%; 
     width: 15%; 
+    color: rgb(189, 24, 24); 
+    border: 6px solid black;
+    border-radius: 4%;
+    padding: 0.3em; 
+    /* display: grid;  */
+    line-height: 1.5;
     /* display: flex;
-    flex-direction: column; */
+    flex-direction: column; 
+    gap: 0.5em;  */
    
-    /* font-size: 1.5rem; */
+    /* font-size: 1.5rem; */ 
+    /* width: 15em; 
+    height: 15em; 
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: skyblue; */
    
-}   
+  }     
+
+ 
+
+
+  
+  /* .add-book-container { 
+    position: fixed;
+    
+  } */
+
 
 /* .button-container-for-book { 
    display: flex;

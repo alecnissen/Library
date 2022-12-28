@@ -2,8 +2,7 @@
     display: border-box;
     margin: 0; 
     padding: 0; 
-    /* background-color: wheat; */
-    /* background-color: skyblue; */
+   
 } 
 
 body { 
@@ -14,8 +13,6 @@ body {
 .header-container { 
     display: flex; 
     justify-content: center;
-    /* text-decoration: underline; */
-    /* font-family: sans-serif; */
 } 
 
 .header-container > h1 { 
@@ -33,12 +30,7 @@ body {
     font-size: 1.5rem;
     
 } 
-/* 
-.sticky-btn-container { 
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-} */
+
 
 
 
@@ -133,48 +125,20 @@ body {
     align-content: flex-start;
     width: 100em;
      height: 100em;  
-    /* width: 15em; 
-    height: 15em;  */
     font-size: 1.5rem;
     font-weight: bold; 
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-    /* overflow: scroll; */
-    /* font-family: 'Courier New', Courier, monospace; */
-    /* background-color: lavender; */
-    /* color: skyblue;
-    background-color: peru; */
-    /* border: 3px solid black; 
-    border-radius: 5%; */
-    /* display: flex;
-    flex-wrap: wrap;  */
     
 } 
 
 .read-book-btn, 
 .remove-book-btn { 
-    /* background-color: white; */
     width:  5em; 
     height: 2em;  
     font-size: 1.5rem;
-    /* margin-left: 3.5em; 
-    margin-top: 10em;  */
     margin-left: 1.5em; 
     margin-top: 5em; 
     border-radius: 15%; 
-    
-
-
-    /* display: inline;
-    justify-content: center; */
-    /* align-content: flex-end;    */
-    /* display: flex;  */
-      
-     /* position: relative; */
-    /* top: 10em; 
-    left: 1.5em;   */
-    /* margin: 1em;  */ 
-
-
 }  
 
 .remove-book-btn { 
@@ -187,31 +151,7 @@ body {
     height: 2.5em; 
 }
 
-/* #container-for-books > .read-book-btn { 
-    position: relative;
-    top: 12em; 
-    left: 3em;  
-}  */
 
-
-
-/* 
-#container-for-books > .remove-book-btn { 
-    position: relative;
-    top: 12em; 
-    left: 3em;  
-}  */
-
-/* .book-style-container > .read-book-btn, .remove-book-btn { 
-    position: relative;
-    top: 12em; 
-
-}  */ 
-
-/* .read-book-btn { 
-    position: relative;
-    top: 12em; 
-} */
 
 
 
@@ -224,41 +164,8 @@ body {
     border: 6px solid black;
     border-radius: 4%;
     padding: 0.3em; 
-    /* display: grid;  */
     line-height: 1.5;
-    /* display: flex;
-    flex-direction: column; 
-    gap: 0.5em;  */
-   
-    /* font-size: 1.5rem; */ 
-    /* width: 15em; 
-    height: 15em; 
-    font-size: 2rem;
-    font-weight: bold;
-    background-color: skyblue; */
    
   }     
 
  
-
-
-  
-  /* .add-book-container { 
-    position: fixed;
-    
-  } */
-
-
-/* .button-container-for-book { 
-   display: flex;
-} */
- 
-
-
-/* .read-book-btn, 
-.remove-book-btn { 
-    display: flex;
-    flex-direction: row; 
-    font-size: 1.5rem; 
-    
-} */

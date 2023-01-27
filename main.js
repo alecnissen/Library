@@ -1,4 +1,4 @@
-let myLibrary = []; 
+let myLibrary = [];
 
 
 
@@ -13,17 +13,17 @@ let myLibrary = [];
     // method2
 // }
 
-class Book { 
-    constructor(title, author, pages, read) { 
+class Book {
+    constructor(title, author, pages, read) {
     this.title = title;
     this.author = author; 
     this. pages = pages; 
     this.read = read;
+    this.id = crypto.randomUUID();
     }
      toggleReadStatus() { 
      this.read = !this.read;
  }
-
 } 
 
 // toggleReadStatus() { 
@@ -47,12 +47,12 @@ class Book {
 
 
 let book; 
-let selectedBookFromArray 
-let deletedBook
-let removeBookFromDOM
-let deleteThis
-let removeThis 
-let bookfromArrayID 
+let selectedBookFromArray;
+let deletedBook;
+let removeBookFromDOM;
+let deleteThis;
+let removeThis; 
+let bookfromArrayID; 
 
 
 
@@ -168,7 +168,7 @@ function displayBook(newBook) {
              
 
 
-    
+
                 removeBookButton.addEventListener('click', function(e){
                   
                     

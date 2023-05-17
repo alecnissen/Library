@@ -1,18 +1,6 @@
 let myLibrary = [];
 
 
-
-// Go back to your “Library” example 
-// and refactor it to use class instead of plain constructors.
-
-// class MyClass {
-    // constructor() { 
-
-    // }
-    // method1
-    // method2
-// }
-
 class Book {
     constructor(title, author, pages, read) {
     this.title = title;
@@ -56,11 +44,6 @@ let bookfromArrayID;
 
 
 
-       
-
-
-
-
 document.getElementById("add-book-btn").addEventListener('click', function(){
     document.querySelector(".pop-up-field").style.display = "flex"; 
 }) 
@@ -69,12 +52,8 @@ document.querySelector('.close-btn').addEventListener('click', function(){
     document.querySelector('.pop-up-field').style.display = "none"; 
 }) 
 
-
 let submitBtn = document.querySelector('#submit-btn'); 
 let inputForm = document.querySelector('form'); 
-
-
-
 
 inputForm.addEventListener('submit', function(e){ 
     e.preventDefault(); 
@@ -86,7 +65,7 @@ inputForm.addEventListener('submit', function(e){
     let title = document.querySelector('#title-of-book-input-field').value; 
     
     if (title === '' || title == null) { 
-        // class list add not working, 
+        
         messages.push('Title is required!');
     } 
     
@@ -94,8 +73,6 @@ inputForm.addEventListener('submit', function(e){
 
         messages.push('Title cannot be longer than 20 characters');
     } 
-
-
 
     let author = document.querySelector('#author-of-book-input-field').value;
 
@@ -111,15 +88,7 @@ inputForm.addEventListener('submit', function(e){
         messages.push('Author name cannot be a number!');
     } 
 
-    // used else if, why is it still running into this block? 
-
-    // 
-
-
-
     let pages =  document.querySelector('#pages-input-field').value; 
-
-    // pages cannot be blank or type of string, 
 
     if (pages === '' || pages == null) { 
         messages.push('Pages value cannot be blank!');
@@ -133,7 +102,6 @@ inputForm.addEventListener('submit', function(e){
         messages.push('Pages cannot be longer than 5 characters!');
     }
 
-
     let readOrNot = document.querySelector('#read-or-not-checkbox').checked;  
 
     this.reset(); 
@@ -144,7 +112,7 @@ inputForm.addEventListener('submit', function(e){
 
 
     if (messages.length === 0) { 
-        // if there is no messages, then newBook obj is created, and gets added to library 
+        // if there is no error messages, then newBook obj is created, and gets added to library 
         const newBook = new Book(title, author, pages, readOrNot); 
 
         addBookToLibrary(newBook); 
@@ -163,38 +131,11 @@ inputForm.addEventListener('submit', function(e){
 
         e.preventDefault(); 
 
-        // let errorMessageDiv = document.getElementById('error-message-div'); 
-
         errorMessageDiv.textContent = messages.join(', ');
     
     } 
-
-    // inputForm.reset();
     
 })      
-
-
-// make the if block that if the messages.length greater than 0, 
-
-// meaning there is a message, then push into the error container, 
-
-// the validation looks ok, 
-
-// why if I put no value for author, 
-
-// it will still show author cannot be number? 
-
-// the else if, if you have an if, it will still run into that block 
-
-// go through each block and determine if it is working effectively, 
-
-// and looks like, it won't add if there is any errors, 
-
-// it will add if there are no errors. 
-
-
-
-
 
 
 function addBookToLibrary(newBook) { 
@@ -203,13 +144,7 @@ function addBookToLibrary(newBook) {
 } 
 
 
-
-
-
-
 function displayBook(newBook) {   
-    
-    
     
     let booksContainer = document.querySelector('#container-for-books'); 
     
@@ -223,7 +158,6 @@ function displayBook(newBook) {
     
     let bookOutputPages = document.createElement('div'); 
 
-    
     let bookOutputReadBook = document.createElement('button'); 
      
     let buttonContainer = document.createElement('container'); 
@@ -241,11 +175,6 @@ function displayBook(newBook) {
     bookOutputAuthor.innerText = `Author:  ${newBook.author}`;
     
     bookOutputPages.innerText = `Pages: ${newBook.pages}`; 
-    
-    
-        
-        
-        
         
         bookOutputReadBook.addEventListener('click', () => { 
             newBook.toggleReadStatus(); 
@@ -270,12 +199,7 @@ function displayBook(newBook) {
             bookOutputReadBook.style.backgroundColor = 'red'; 
              
         }   
-        
     }   
-
- 
-             
-
 
 
                 removeBookButton.addEventListener('click', function(e){
@@ -294,9 +218,6 @@ function displayBook(newBook) {
 
                         });      
                     })   
-                    
-                    
-     
                                                                                   
     if (newBook.read === true) {   
         bookOutputReadBook.innerText = 'Read' 
@@ -307,16 +228,10 @@ function displayBook(newBook) {
         bookOutputReadBook.style.backgroundColor = 'red'; 
          
     }    
-        
-
-    
-
 
     booksContainer.append(bookOutputReadBook);    
 
-
     removeBookButton.innerText = 'Remove';  
-
 
     styleContainer.append(bookOutputTitle); 
     
@@ -328,10 +243,7 @@ function displayBook(newBook) {
     
     styleContainer.append(removeBookButton); 
 
-    
-    
     booksContainer.append(styleContainer);   
-    
     
 }   
 

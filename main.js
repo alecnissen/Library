@@ -79,6 +79,8 @@ let inputForm = document.querySelector('form');
 inputForm.addEventListener('submit', function(e){ 
     e.preventDefault(); 
 
+    let errorMessageDiv = document.getElementById('error-message-div'); 
+
     let messages = []; 
 
     let title = document.querySelector('#title-of-book-input-field').value; 
@@ -87,15 +89,11 @@ inputForm.addEventListener('submit', function(e){
         // class list add not working, 
         messages.push('Title is required!');
     } 
-
-    // can we just keep them in the same condition? 
-
-    // does it make a difference? 
     
     if (title.length > 20) { 
 
         messages.push('Title cannot be longer than 20 characters');
-    }
+    } 
 
 
 
@@ -105,13 +103,18 @@ inputForm.addEventListener('submit', function(e){
         messages.push('Author cannot be longer than 20 characters!');
     } 
 
-    if (!isNaN(author)) { 
-        messages.push('Author name cannot be a number!');
-    }
-
-    if (author === '' || title == null) { 
+    if (author === '' || author == null) { 
         messages.push('Author cannot be blank!');
     } 
+
+    if (!isNaN(author)) { 
+        messages.push('Author name cannot be a number!');
+    } 
+
+    // used else if, why is it still running into this block? 
+
+    // 
+
 
 
     let pages =  document.querySelector('#pages-input-field').value; 
@@ -131,20 +134,39 @@ inputForm.addEventListener('submit', function(e){
     }
 
 
-
-
     let readOrNot = document.querySelector('#read-or-not-checkbox').checked;  
+
     this.reset(); 
-    const newBook = new Book(title, author, pages, readOrNot); 
-    addBookToLibrary(newBook); 
+
+    // const newBook = new Book(title, author, pages, readOrNot); 
+
+    // addBookToLibrary(newBook); 
+
+
+    if (messages.length === 0) { 
+        // if there is no messages, then newBook obj is created, and gets added to library 
+        const newBook = new Book(title, author, pages, readOrNot); 
+
+        addBookToLibrary(newBook); 
+
+        inputForm.reset();
+
+        errorMessageDiv.textContent = '';
+
+        // reset the error message div 
+
+    }
+
+
 
     if (messages.length > 0) { 
 
         e.preventDefault(); 
 
-        let errorMessageDiv = document.getElementById('error-message-div'); 
+        // let errorMessageDiv = document.getElementById('error-message-div'); 
 
         errorMessageDiv.textContent = messages.join(', ');
+    
     } 
 
     // inputForm.reset();
@@ -156,9 +178,19 @@ inputForm.addEventListener('submit', function(e){
 
 // meaning there is a message, then push into the error container, 
 
+// the validation looks ok, 
 
+// why if I put no value for author, 
 
+// it will still show author cannot be number? 
 
+// the else if, if you have an if, it will still run into that block 
+
+// go through each block and determine if it is working effectively, 
+
+// and looks like, it won't add if there is any errors, 
+
+// it will add if there are no errors. 
 
 
 

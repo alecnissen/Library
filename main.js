@@ -75,17 +75,94 @@ let inputForm = document.querySelector('form');
 
 
 
+
 inputForm.addEventListener('submit', function(e){ 
-    e.preventDefault();
+    e.preventDefault(); 
+
+    let messages = []; 
+
     let title = document.querySelector('#title-of-book-input-field').value; 
+    
+    if (title === '' || title == null) { 
+        // class list add not working, 
+        messages.push('Title is required!');
+    } 
+
+    // can we just keep them in the same condition? 
+
+    // does it make a difference? 
+    
+    if (title.length > 20) { 
+
+        messages.push('Title cannot be longer than 20 characters');
+    }
+
+
+
     let author = document.querySelector('#author-of-book-input-field').value;
+
+     if (author.length > 20) { 
+        messages.push('Author cannot be longer than 20 characters!');
+    } 
+
+    if (!isNaN(author)) { 
+        messages.push('Author name cannot be a number!');
+    }
+
+    if (author === '' || title == null) { 
+        messages.push('Author cannot be blank!');
+    } 
+
+
     let pages =  document.querySelector('#pages-input-field').value; 
+
+    // pages cannot be blank or type of string, 
+
+    if (pages === '' || pages == null) { 
+        messages.push('Pages value cannot be blank!');
+    } 
+
+    if (isNaN(pages)) { 
+        messages.push('Pages value cannot be a string, only number!');
+    } 
+
+    if (pages.length > 6) { 
+        messages.push('Pages cannot be longer than 5 characters!');
+    }
+
+
+
+
     let readOrNot = document.querySelector('#read-or-not-checkbox').checked;  
     this.reset(); 
     const newBook = new Book(title, author, pages, readOrNot); 
     addBookToLibrary(newBook); 
+
+    if (messages.length > 0) { 
+
+        e.preventDefault(); 
+
+        let errorMessageDiv = document.getElementById('error-message-div'); 
+
+        errorMessageDiv.textContent = messages.join(', ');
+    } 
+
+    // inputForm.reset();
     
 })      
+
+
+// make the if block that if the messages.length greater than 0, 
+
+// meaning there is a message, then push into the error container, 
+
+
+
+
+
+
+
+
 
 
 function addBookToLibrary(newBook) { 

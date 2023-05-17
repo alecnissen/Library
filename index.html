@@ -17,16 +17,66 @@
         <button id="add-book-btn" class="add-book-btn">+ Add Book</button> 
     </div>
     
+    <!-- title can be anything, 
+    author can't be a number, 
+    number of pages cant be words  --> 
 
+    <!-- 
+       //  So auth using library project,
+       
+       // inside an event listener when the user submits 
+
+       // keep an array of messages, 
+
+       // get the value for each item title, author, pages, check mark 
+
+       // then for each field, 
+
+       // make sure the title is not longer than let say 30-40 characters 
+
+       // the author cannot be a number and && cannot be llonger than certain length 
+
+       // pages must be numerical, typeof !number, regex expression maker, 
+
+       // checkbox optional 
+
+       // title length, 
+
+       // author length, no numbers, 
+
+       // pages must be numerical, 
+
+       // conditionals, 
+
+       // push the messages into the array, 
+
+       // then have a place where they cen be displayed. 
+    
+       // if there are any messages, use conditional 
+
+       // that if the length of the error messages array greater than 0, innterText = messages, with comma seperated 
+    
+        // ok starting on form validation, going back to library, 
+
+        // looks like we first have to make a  new branch 
+
+        // branch is made, lets begin, 
+
+        // first looks like we will need to add the logic within the event listener. 
+    
+
+        // make the messages array 
+    -->
     
     <form method="get" type="submit">
     <div class="pop-up-field"> 
         <div class="pop-up-content"> 
             <img src="icons/account-circle.png" alt="account-img">
+            <div id="error-message-div" style="color: red"></div>
             <img src="icons/close-circle.png" alt="close-img"  class="close-btn">
-            <input type="text" placeholder="Title of Book" id="title-of-book-input-field" required> 
-            <input type="text" placeholder="Author" id="author-of-book-input-field" required> 
-            <input type="text" placeholder="Number of Pages" id="pages-input-field" required> 
+            <input type="text" placeholder="Title of Book" id="title-of-book-input-field"> 
+            <input type="text" placeholder="Author" id="author-of-book-input-field"> 
+            <input type="text" placeholder="Number of Pages" id="pages-input-field"> 
             <div class="read-it-container"> 
             <p class="have-you-read-it-txt">Have you read it?</p>
             <input type="checkbox" id="read-or-not-checkbox"> 

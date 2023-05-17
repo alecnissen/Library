@@ -63,7 +63,7 @@ body {
 } 
 
 .pop-up-content { 
-    height: 290px; 
+    height: 300px; 
     width: 500px; 
     background: white; 
     padding: 20px; 
@@ -166,6 +166,13 @@ body {
     padding: 0.3em; 
     line-height: 1.5;
    
-  }     
+  }      
+
+
+  /* form validation classes and styles for error messages */ 
+
+  .error-message-class { 
+    background-color: red;
+  }
 
  
